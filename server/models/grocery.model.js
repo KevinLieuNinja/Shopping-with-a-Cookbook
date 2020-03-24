@@ -10,9 +10,9 @@ const mongoose = require("mongoose")
 //     },
 // })
 
-// const ListSchema = mongoose.Schema({
-//     list:[ItemSchema]
-// })
+const ListSchema = mongoose.Schema({
+    list:[ItemSchema]
+})
 
 const GroceryListSchema = mongoose.Schema({
     list: [
