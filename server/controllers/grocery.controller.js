@@ -23,9 +23,3 @@ module.exports.getAllGroceryList= (request, response) => {
         .catch(err => response(err))
 }
 
-// module.exports.createGroceryList = (request, response) => {
-//     const {ingredient, bought} = request.body;
-//     GroceryList.create(request.body)
-//         .then(GroceryList => response.json(GroceryList))
-//         .catch(err => response.status(400).json(err))
-// }
