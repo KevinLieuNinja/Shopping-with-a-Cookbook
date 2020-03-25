@@ -8,6 +8,7 @@ const ItemSchema = mongoose.Schema({
         type: Boolean,
         default: false 
     },
+
 })
 
 const ListSchema = mongoose.Schema({
