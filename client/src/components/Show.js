@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Show = ({items, remove}) => {
+
+    
     
     return(
         
