@@ -1,33 +1,20 @@
-import React, { useState } from 'react';
-import Form from "./Form"
-import Show from "./Show"
+import React, { useState, useEffect} from 'react';
+import axios from 'axios'
+import { Router } from '@reach/router'
+import Dashboard from './Dashboard'
 
 function AppWrapper  () {
+    const [listState, setListState] = useState([])
 
-    const [inputState, setInputState] = useState("")
-    const [groceryState, setGroceryState] = useState([])
-
-    const changeHandler = (event) => {
-        setInputState(event.target.value)
-    }
-
-    const submitHandler = (event) => {
-        event.preventDefault();
-        setGroceryState([
-            ...groceryState,
-            [inputState]
-        ])
-        setInputState("")
-    }
-
-    const removeGrocery = index => {
-        var arr = groceryState.filter((item, i) => i != index)
-        setGroceryState(arr)
-    }
+    useEffect(()=>{
+        axios.get("http://localhost:8000/api/grocery")
+            .then(res => setListState(res.data))
+            .catch(err => console.log(err))
+    }, []);
+    
     return(
         <div>
-            <Form changeHandler={changeHandler} submit={submitHandler} inputState={inputState}/>
-            <Show items={groceryState} remove={removeGrocery}/>
+            <Dashboard path="/dashboard" listState={listState} setListState={setListState} />
         </div>
     );
 }
