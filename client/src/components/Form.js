@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Form = ({changeHandler, submit, inputState}) => {
+
+    
     return(
         <div>
             <h1>Grocery List</h1>
