@@ -32,8 +32,8 @@ function Dashboard () {
     }, [submitState])
 
     return (
-        <div>
-            <h1>Create a new Grocery List</h1>
+        <div className="App-header">
+            <h1 className="App-title">Create a new Grocery List</h1>
             <form onSubmit={submitHandler}>
                 <input placeholder="ex: Trader Joe's Run" onChange = {(e)=>setNameState(e.target.value)}></input>
                 <button className="btn btn-success ml-2" type="submit">Submit</button>
