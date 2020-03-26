@@ -8,13 +8,16 @@ const ItemSchema = mongoose.Schema({
         type: Boolean,
         default: false 
     },
-    directions: {
-        type: String,
-    }
+
 })
 
 const ListSchema = mongoose.Schema({
+    name: {
+        type:String,
+        required:[true, "Name must be there"]
+    },
     list:[ItemSchema]
+    
 })
 
 // const GroceryListSchema = mongoose.Schema({
@@ -31,4 +34,6 @@ const ListSchema = mongoose.Schema({
 //     ]
 // })
 
-module.exports.GroceryList = mongoose.model("GroceryList", GroceryListSchema)
+// module.exports.GroceryList = mongoose.model("GroceryList", GroceryListSchema)
+module.exports.Item = mongoose.model("Item", ItemSchema)
+module.exports.GroceryList = mongoose.model("GroceryList", ListSchema)

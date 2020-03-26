@@ -1,9 +1,14 @@
+
 import React, { useState, useEffect } from 'react';
 import Form from "./Form"
 import Show from "./Show"
 import axios from 'axios'
+import { Router } from '@reach/router'
+import Dashboard from './Dashboard'
 
 function AppWrapper  () {
+    const [listState, setListState] = useState([])
+
 
     const [inputState, setInputState] = useState("")
     const [groceryState, setGroceryState] = useState([])
@@ -12,13 +17,6 @@ function AppWrapper  () {
     const changeHandler = (event) => {
         setInputState(event.target.value)
     }
-    useEffect(()=>{
-        axios.get("")
-            .then(res => {
-                // setListState(res.data)
-            })
-            .catch(err =>console.log("No call was made", err))
-    })
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -33,10 +31,16 @@ function AppWrapper  () {
         var arr = groceryState.filter((item, i) => i != index)
         setGroceryState(arr)
     }
+
+    useEffect(()=>{
+        axios.get("http://localhost:8000/api/grocery")
+            .then(res => setListState(res.data))
+            .catch(err => console.log(err))
+    }, []);
+    
     return(
         <div>
-            <Form changeHandler={changeHandler} submit={submitHandler} inputState={inputState}/>
-            <Show items={groceryState} remove={removeGrocery}/>
+            <Dashboard listState={listState} setListState={setListState} />
         </div>
     );
 }
