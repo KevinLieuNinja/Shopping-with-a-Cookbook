@@ -19,7 +19,7 @@ const Show = ({items, remove}) => {
                 
                 <button type="submit" className="btn btn-primary btn-sm ml-4 mt-1" onClick={() => {deleteOneItem(item._id)}}>Purchased</button>
             </li>
-        )}    
+            )}    
         </div>
     )
     
