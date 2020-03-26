@@ -12,11 +12,11 @@ function AllLists ({listState, setListState, submitState, setSubmitState}) {
             .catch(err => console.log(err))
     } 
     return (
-        <div>
-            <h2>All Grocery Lists:</h2>
+        <div className="App-header">
+            <h2 >All Grocery Lists:</h2>
                 {listState.map((list, index) =>(
                     <div key = {index}>
-                        <p> {list.name}<br/>
+                        <p className="App-header-p"> {list.name}<br/>
                             <button className="btn btn-primary" onClick ={() => navigate(`/grocery/${list._id}`)} >Details</button>
                         </p>
                             <button className = "btn btn-danger" onClick ={(e) => {deleteGroceryList(list._id)}}>
