@@ -8,7 +8,10 @@ const Show = ({items, remove}) => {
             .then(res=> console.log(items))
             .catch(err => console.log(err))
     }
+
+    const [purchaseState, setPurchaseState] = useState(true)
     
+    const 
     return(
         
         <div className="List">
