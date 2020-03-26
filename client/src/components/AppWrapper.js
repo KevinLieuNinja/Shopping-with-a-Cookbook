@@ -14,7 +14,7 @@ function AppWrapper  () {
     
     return(
         <div>
-            <Dashboard path="/dashboard" listState={listState} setListState={setListState} />
+            <Dashboard listState={listState} setListState={setListState} />
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@reach/router'
 
 const Form = ({changeHandler, submit, inputState}) => {
 
@@ -6,8 +7,9 @@ const Form = ({changeHandler, submit, inputState}) => {
     return(
         <div>
             <h1>Grocery List</h1>
+            <h4><Link to="/">Go Back Home</Link></h4>
                 <form onSubmit={submit}>
-                    <input value={inputState} type="text" name="task" onChange={changeHandler}/>
+                    <input placeholder="ex. peanut butter" value={inputState} type="text" name="task" onChange={changeHandler}/>
                     <button className="btn btn-success ml-2" type="submit">Add</button>
                 </form>
         </div>
