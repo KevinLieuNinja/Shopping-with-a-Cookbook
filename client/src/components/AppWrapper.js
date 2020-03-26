@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from "./Form"
 import Show from "./Show"
+import axios from 'axios'
 
 function AppWrapper  () {
 
     const [inputState, setInputState] = useState("")
     const [groceryState, setGroceryState] = useState([])
+    // const [listState, setListState ] = ({})
 
     const changeHandler = (event) => {
         setInputState(event.target.value)
     }
+    useEffect(()=>{
+        axios.get("")
+            .then(res => {
+                // setListState(res.data)
+            })
+            .catch(err =>console.log("No call was made", err))
+    })
 
     const submitHandler = (event) => {
         event.preventDefault();
