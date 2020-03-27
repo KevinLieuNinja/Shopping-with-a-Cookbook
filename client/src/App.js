@@ -33,8 +33,8 @@ function App() {
         <Router>
           <AppWrapper path="/" /> 
           <CreateList path="/grocery/:id" />
+          <RecipeWrapper path="/grocery/:ingredient/search"/>
         </Router>
-        <RecipeWrapper />
     </div>
   );
 }

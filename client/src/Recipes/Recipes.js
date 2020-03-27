@@ -11,7 +11,7 @@ const Recipes = props => (
                     <img className="recipe__box-img" src={recipe.image} alt={recipe.title}/>
                     <div className="recipe__text">
                         <h4>{ recipe.title }</h4>
-                        <Link to={"/cooking/${:id}"+recipe.id}>View Recipe</Link>
+                        <Link to={"/recipe/"+recipe.id}>View Recipe</Link>
                     </div>
                 </div>
             </div>

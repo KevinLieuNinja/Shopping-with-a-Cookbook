@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { navigate } from '@reach/router'
+
+
 
 const Show = ({items, remove}) => {
     
@@ -18,6 +21,8 @@ const Show = ({items, remove}) => {
                 {item.ingredient} 
                 
                 <button type="submit" className="btn btn-primary btn-sm ml-4 mt-1" onClick={() => {deleteOneItem(item._id)}}>Purchased</button>
+
+                <button className="btn btn-success btn-sm ml-4 mt-1" onClick ={() => navigate(`/grocery/${item.ingredient}/search`)} >Recipes</button>
             </li>
             )}    
         </div>
