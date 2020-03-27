@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 const ListForm = ({getRecipe, ingredient}) => {
     console.log("ingredient: ", ingredient)
     return(
@@ -10,5 +12,6 @@ const ListForm = ({getRecipe, ingredient}) => {
         </form>
     )
 };
+
 
 export default ListForm;

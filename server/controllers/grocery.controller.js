@@ -32,9 +32,12 @@ module.exports.getOneGrocery= (request, response) => {
         .catch(err => response(err))
 }
 
-module.exports.deleteOneItem= (request, response) => {
-    Item.deleteOne({_id:request.params.id})
-        .then(deleteItem => response.json(deleteItem))
+module.exports.purchaseOneItem= (request, response) => {
+    GroceryList.find({"list._id": request.params.item})
+        .then(purchaseItem => {
+            console.log(purchaseItem)
+            response.json(purchaseItem)
+        })
         .catch(err => response.json(err))
 }
 

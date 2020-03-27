@@ -8,6 +8,6 @@ module.exports = function(app){
     app.post('/api/grocery', GroceryListController.createGroceryList);
     app.get('/api/grocery/:id', GroceryListController.getOneGrocery);
     app.put('/api/grocery/:id', GroceryListController.addToGroceryList);
-    app.delete('/api/grocery/item/:id', GroceryListController.deleteOneItem);
+    // app.put('/api/grocery/item/:id', GroceryListController.find);
     app.delete('/api/grocery/:id', GroceryListController.deleteGroceryList)
 }

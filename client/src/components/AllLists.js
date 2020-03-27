@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios'
-import { Link, navigate } from '@reach/router'
+import { navigate } from '@reach/router'
 
 function AllLists ({listState, setListState, submitState, setSubmitState}) {
 
@@ -13,7 +13,7 @@ function AllLists ({listState, setListState, submitState, setSubmitState}) {
     } 
     return (
         <div className="App-header">
-            <h2 >All Grocery Lists:</h2>
+            {/* <h2 >All Grocery Lists:</h2>
                 {listState.map((list, index) =>(
                     <div key = {index}>
                         <p className="App-header-p"> {list.name}<br/>
@@ -24,7 +24,30 @@ function AllLists ({listState, setListState, submitState, setSubmitState}) {
                             </button>
                             <hr/>
                     </div>
-                ))}
+                ))} */}
+
+<           table className="table">
+            <thead className="thead-light">
+                <tr>
+                <th scope="col">List</th>
+                <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {listState.map((list, index)=> 
+                    <tr key={index}>
+                        <th scope="row">{list.name}</th>
+                        <td>
+                            <button className="btn btn-primary" onClick ={() => navigate(`/grocery/${list._id}`)} >Details</button>
+                            <button className="btn btn-danger ml-2" onClick={() => {deleteGroceryList(list._id)}}>Delete</button>
+                        </td>
+                    </tr>
+                )}
+
+            </tbody>
+            </table>
+
+
         </div>
     )
 } 
