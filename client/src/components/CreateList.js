@@ -34,7 +34,7 @@ function CreateList  ({id}) {
         axios.get("http://localhost:8000/api/grocery/" + id)
             .then(res => {setGroceryState(res.data)})
             .catch(err => console.log(err))
-    }, [])
+    },[])
 
     return(
         <div>
