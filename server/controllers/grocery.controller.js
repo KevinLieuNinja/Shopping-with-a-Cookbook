@@ -33,12 +33,22 @@ module.exports.getOneGrocery= (request, response) => {
 }
 
 module.exports.purchaseOneItem= (request, response) => {
-    GroceryList.find({"list._id": request.params.item})
+    console.log("PURHCASE ONE TIME CONTROLLER", request.params.id)
+
+    GroceryList.findOne({"list._id": request.params.id})
         .then(purchaseItem => {
-            console.log(purchaseItem)
+            for(let ingredient of purchaseItem.list){
+                if(ingredient._id == request.params.id){
+                    ingredient.bought = true
+                    break
+                }
+            }
+            purchaseItem.save()
             response.json(purchaseItem)
         })
-        .catch(err => response.json(err))
+        .catch(err => {
+            response.json(err)
+        })
 }
 
 module.exports.deleteGroceryList = (request, response) => {

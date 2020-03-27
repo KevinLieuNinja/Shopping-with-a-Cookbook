@@ -10,6 +10,7 @@ function CreateList  ({id}) {
         name:"",
         list:[]
     })
+    const [submitState, setSubmitState] = useState(false)
 
     const changeHandler = (event) => {
         setInputState(event.target.value)
@@ -24,22 +25,19 @@ function CreateList  ({id}) {
         setInputState("")
     }
 
-    // const removeGrocery = (id) => {
-    //     axios.delete("http://localhost:8000/api/grocery/item/" + id)
-    //         .then(res=> console.log(groceryState))
-    //         .catch(err => console.log(err))
-    // }
-
     useEffect(() => {
         axios.get("http://localhost:8000/api/grocery/" + id)
-            .then(res => {setGroceryState(res.data)})
+            .then(res => {
+                console.log("LIST: ", res.data)
+                setGroceryState(res.data)
+            })
             .catch(err => console.log(err))
-    },[])
+    },[submitState])
 
     return(
         <div>
             <Form changeHandler={changeHandler} submit={submitHandler} inputState={inputState}/>
-            <Show items={groceryState} />
+            <Show submitState={submitState} setSubmitState={setSubmitState} items={groceryState} />
         </div>
     );
 }
