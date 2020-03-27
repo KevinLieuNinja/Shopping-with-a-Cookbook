@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import NavbarBrand from "react-bootstrap/NavbarBrand";
+// import NavbarBrand from "react-bootstrap/NavbarBrand";
 import CreateList from './components/CreateList';
 import RecipeWrapper from "./Recipes/RecipeWrapper"
 import Contact from "./Recipes/Contact"

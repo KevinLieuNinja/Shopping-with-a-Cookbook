@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import RecipeWrapper from '../Recipes/RecipeWrapper'
+
 
 import { Card } from 'react-bootstrap'
 import { navigate } from '@reach/router'
