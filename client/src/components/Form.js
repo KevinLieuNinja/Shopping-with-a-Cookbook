@@ -10,7 +10,7 @@ const Form = ({changeHandler, submit, inputState, items}) => {
                 <form onSubmit={submit}>
                     <input placeholder="ex. peanut butter" value={inputState} type="text" name="task" onChange={changeHandler}/>
                     <button className="btn btn-success ml-2" type="submit">Add</button>
-                </form>
+                </form><br/>
         </div>
     )
 }
