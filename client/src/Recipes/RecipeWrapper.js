@@ -21,7 +21,6 @@ class RecipeWrapper extends Component {
             `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${recipeName}&number=9&apiKey=${API_KEY}`
         )
         const data = await api_call.json();
-        console.log("DATA from API: ", data)
         this.setState({ recipes: data});
         console.log(this.state.recipes)
         console.log(recipeName)
