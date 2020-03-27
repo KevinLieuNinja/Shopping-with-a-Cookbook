@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import ListForm from "./ListForm"
 import Recipes from "./Recipes"
+import Directions from "./Directions"
 
 const API_KEY ="a416d2bf9ec645d0b3ea10e602bce75c"
 
@@ -32,8 +33,9 @@ class RecipeWrapper extends Component {
                 <header className="App-header">
                     <h1 className="App-title"> Recipe Search</h1>
                 </header>
-                <ListForm getRecipe={this.getRecipe}/>
-                <Recipes recipes={this.state.recipes}/>
+                <ListForm ingredient={this.props.ingredient} getRecipe={this.getRecipe}/>
+                <Recipes  recipes={this.state.recipes}/>
+                
             </div>
         )
     }
