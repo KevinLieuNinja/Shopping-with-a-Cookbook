@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import CreateList from './CreateList'
 import AllLists from './AllLists'
 import axios from 'axios';
 import { navigate } from '@reach/router';
@@ -38,7 +37,6 @@ function Dashboard () {
                 <input placeholder="ex: Trader Joe's Run" onChange = {(e)=>setNameState(e.target.value)}></input>
                 <button className="btn btn-success ml-2" type="submit">Submit</button>
             </form><br/>
-            {/* <CreateList /> */}
             <AllLists submitState={submitState} setSubmitState={setSubmitState} listState={listState} setListState={setListState}/>
         </div>
     )

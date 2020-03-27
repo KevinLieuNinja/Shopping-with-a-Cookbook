@@ -13,20 +13,8 @@ function AllLists ({listState, setListState, submitState, setSubmitState}) {
     } 
     return (
         <div className="App-header">
-            {/* <h2 >All Grocery Lists:</h2>
-                {listState.map((list, index) =>(
-                    <div key = {index}>
-                        <p className="App-header-p"> {list.name}<br/>
-                            <button className="btn btn-primary" onClick ={() => navigate(`/grocery/${list._id}`)} >Details</button>
-                        </p>
-                            <button className = "btn btn-danger" onClick ={(e) => {deleteGroceryList(list._id)}}>
-                            Delete
-                            </button>
-                            <hr/>
-                    </div>
-                ))} */}
 
-<           table className="table">
+            <table className="table">
             <thead className="thead-light">
                 <tr>
                 <th scope="col">List</th>
