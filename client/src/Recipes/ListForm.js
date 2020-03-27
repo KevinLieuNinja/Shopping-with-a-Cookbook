@@ -3,7 +3,6 @@ import React from 'react';
 
 
 const ListForm = ({getRecipe, ingredient}) => {
-    console.log("ingredient: ", ingredient)
     return(
         <form onSubmit={getRecipe} style={{ marginBottom:"2rem" }}>
             <input className="form__input" type='text' name="recipeName" defaultValue={ingredient} />
