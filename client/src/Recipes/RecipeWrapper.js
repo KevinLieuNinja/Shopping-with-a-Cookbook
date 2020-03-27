@@ -18,7 +18,7 @@ class RecipeWrapper extends Component {
 
         e.preventDefault () ;
         const api_call = await fetch (
-            `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${recipeName}&number=3&apiKey=${API_KEY}`
+            `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${recipeName}&number=9&apiKey=${API_KEY}`
         )
         const data = await api_call.json();
         console.log("DATA from API: ", data)

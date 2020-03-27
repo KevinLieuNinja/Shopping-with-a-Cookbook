@@ -37,7 +37,7 @@ function Dashboard () {
             <form onSubmit={submitHandler}>
                 <input placeholder="ex: Trader Joe's Run" onChange = {(e)=>setNameState(e.target.value)}></input>
                 <button className="btn btn-success ml-2" type="submit">Submit</button>
-            </form>
+            </form><br/>
             {/* <CreateList /> */}
             <AllLists submitState={submitState} setSubmitState={setSubmitState} listState={listState} setListState={setListState}/>
         </div>

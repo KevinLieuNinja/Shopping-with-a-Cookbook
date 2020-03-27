@@ -8,7 +8,7 @@ const ListForm = ({getRecipe, ingredient}) => {
         <form onSubmit={getRecipe} style={{ marginBottom:"2rem" }}>
             <input className="form__input" type='text' name="recipeName" defaultValue={ingredient} />
 
-            <button className="form__buttonbtn btn-danger btn-sm ml-4 mt-1">Search</button>
+            <button className="form__button btn btn-success btn-sm ml-4 mt-1">Search</button>
         </form>
     )
 };

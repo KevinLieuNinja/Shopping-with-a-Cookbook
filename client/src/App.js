@@ -24,7 +24,7 @@ function App() {
             <Navbar.Collapse id="navbar-toggle">
               <Nav className='ml-auto'>
                 <Link className="nav-link" to="/">Home</Link>
-                <Link className="nav-link" to="/about">Recipes</Link>
+                <Link className="nav-link" to="/grocery/ingredient/search">Recipes</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
               </Nav>
             </Navbar.Collapse>

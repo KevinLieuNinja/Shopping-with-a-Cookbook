@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 // import { Router } from '@reach/router'
 import Dashboard from './Dashboard'
+import RecipeWrapper from '../Recipes/RecipeWrapper';
 
 function AppWrapper  () {
     const [listState, setListState] = useState([])
@@ -41,6 +42,7 @@ function AppWrapper  () {
     return(
         <div>
             <Dashboard listState={listState} setListState={setListState} />
+            <RecipeWrapper />
         </div>
     );
 }
