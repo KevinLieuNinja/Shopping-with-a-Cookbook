@@ -19,7 +19,7 @@ function App() {
         <Container className="p-0" fluid={true}>
           {/* //navbar on top */}
           <Navbar className="border-bottom" bg="transparent" expand="lg">
-            <Navbar.Brand> Shopping With a Cookbook </Navbar.Brand>
+            <Navbar.Brand> <Link to ="/">GrocerRecipe</Link></Navbar.Brand>
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
             <Navbar.Collapse id="navbar-toggle">
